@@ -1,0 +1,171 @@
+If you actually set out to rewrite 100 modules, you’ll learn far more than 99% of people who ever touch the kernel.
+
+Module                  Size  Used by
+ccm                    20480  6
+snd_seq_dummy          12288  0
+rfcomm                102400  4
+snd_hrtimer            12288  1
+qrtr                   53248  2
+cmac                   12288  3
+algif_hash             16384  1
+algif_skcipher         16384  1
+af_alg                 32768  6 algif_hash,algif_skcipher
+bnep                   32768  2
+binfmt_misc            24576  1
+nvidia_uvm           2158592  0
+nls_iso8859_1          12288  1
+amd_atl                69632  1
+intel_rapl_msr         20480  0
+intel_rapl_common      53248  1 intel_rapl_msr
+amdgpu              19722240  6
+edac_mce_amd           28672  0
+snd_sof_amd_acp70      16384  0
+snd_sof_amd_acp63      16384  0
+snd_sof_amd_vangogh    16384  0
+snd_sof_amd_rembrandt    16384  0
+snd_sof_amd_renoir     16384  0
+snd_sof_amd_acp        61440  5 snd_sof_amd_acp70,snd_sof_amd_rembrandt,snd_sof_amd_vangogh,snd_sof_amd_acp63,snd_sof_amd_renoir
+snd_hda_codec_realtek   212992  1
+snd_sof_pci            24576  5 snd_sof_amd_acp70,snd_sof_amd_rembrandt,snd_sof_amd_vangogh,snd_sof_amd_acp63,snd_sof_amd_renoir
+snd_sof_xtensa_dsp     12288  1 snd_sof_amd_acp
+snd_hda_codec_generic   122880  1 snd_hda_codec_realtek
+snd_sof               393216  2 snd_sof_amd_acp,snd_sof_pci
+snd_hda_scodec_component    20480  1 snd_hda_codec_realtek
+snd_sof_utils          16384  1 snd_sof
+snd_hda_codec_hdmi     98304  2
+snd_pci_ps             24576  0
+snd_soc_acpi_amd_match     8192  2 snd_sof_amd_acp63,snd_pci_ps
+snd_amd_sdw_acpi       16384  2 snd_sof_amd_acp,snd_pci_ps
+rtw89_8852be           12288  0
+soundwire_amd          45056  2 snd_sof_amd_acp,snd_pci_ps
+soundwire_generic_allocation    24576  1 soundwire_amd
+rtw89_8852b           368640  1 rtw89_8852be
+snd_hda_intel          61440  3
+soundwire_bus         126976  2 soundwire_generic_allocation,soundwire_amd
+snd_intel_dspcfg       45056  2 snd_hda_intel,snd_sof
+rtw89_8852b_common     73728  1 rtw89_8852b
+kvm_amd               245760  4
+snd_soc_sdca           12288  1 soundwire_bus
+snd_intel_sdw_acpi     16384  1 snd_intel_dspcfg
+nvidia_drm            135168  2
+snd_soc_core          425984  2 snd_sof,soundwire_amd
+snd_hda_codec         204800  4 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec_realtek
+rtw89_pci             102400  1 rtw89_8852be
+nvidia_modeset       1744896  3 nvidia_drm
+kvm                  1425408  3 kvm_amd
+snd_hda_core          147456  5 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek
+uvcvideo              143360  0
+snd_compress           36864  1 snd_soc_core
+irqbypass              12288  1 kvm
+snd_hwdep              20480  1 snd_hda_codec
+btusb                  73728  0
+ac97_bus               12288  1 snd_soc_core
+snd_pcm_dmaengine      16384  1 snd_soc_core
+polyval_clmulni        12288  0
+videobuf2_vmalloc      20480  1 uvcvideo
+rtw89_core           1056768  3 rtw89_8852b,rtw89_pci,rtw89_8852b_common
+btrtl                  32768  1 btusb
+polyval_generic        12288  1 polyval_clmulni
+uvc                    12288  1 uvcvideo
+snd_rpl_pci_acp6x      16384  0
+amdxcp                 12288  1 amdgpu
+snd_seq_midi           24576  0
+ghash_clmulni_intel    16384  0
+videobuf2_memops       16384  1 videobuf2_vmalloc
+btintel                69632  1 btusb
+drm_panel_backlight_quirks    12288  1 amdgpu
+snd_acp_pci            12288  0
+snd_seq_midi_event     16384  1 snd_seq_midi
+sha256_ssse3           32768  0
+drm_buddy              24576  1 amdgpu
+videobuf2_v4l2         36864  1 uvcvideo
+snd_acp_legacy_common    16384  1 snd_acp_pci
+sha1_ssse3             32768  0
+btbcm                  24576  1 btusb
+drm_exec               12288  1 amdgpu
+snd_pci_acp6x          16384  0
+videobuf2_common       86016  4 videobuf2_vmalloc,videobuf2_v4l2,uvcvideo,videobuf2_memops
+snd_rawmidi            57344  1 snd_seq_midi
+drm_suballoc_helper    20480  1 amdgpu
+btmtk                  36864  1 btusb
+aesni_intel           122880  8
+mac80211             1814528  2 rtw89_core,rtw89_pci
+snd_seq               122880  9 snd_seq_midi,snd_seq_midi_event,snd_seq_dummy
+videodev              360448  2 videobuf2_v4l2,uvcvideo
+crypto_simd            16384  1 aesni_intel
+mfd_aaeon              12288  0
+asus_nb_wmi            32768  0
+snd_pcm               192512  13 snd_sof_amd_acp,snd_hda_codec_hdmi,snd_pci_acp6x,snd_hda_intel,snd_hda_codec,snd_sof,snd_compress,snd_soc_core,snd_sof_utils,soundwire_amd,snd_hda_core,snd_pci_ps,snd_pcm_dmaengine
+drm_display_helper    278528  1 amdgpu
+nvidia              14360576  37 nvidia_uvm,nvidia_modeset
+cryptd                 24576  3 crypto_simd,ghash_clmulni_intel
+asus_wmi               98304  2 asus_nb_wmi,mfd_aaeon
+snd_seq_device         16384  3 snd_seq,snd_seq_midi,snd_rawmidi
+spd5118                12288  0
+bluetooth            1011712  34 btrtl,btmtk,btintel,btbcm,bnep,btusb,rfcomm
+mc                     81920  4 videodev,videobuf2_v4l2,uvcvideo,videobuf2_common
+rapl                   20480  0
+cec                    94208  2 drm_display_helper,amdgpu
+sparse_keymap          12288  1 asus_wmi
+wmi_bmof               12288  0
+amd_pmf               110592  0
+snd_pci_acp5x          16384  0
+snd_timer              53248  3 snd_seq,snd_hrtimer,snd_pcm
+nvidia_wmi_ec_backlight    12288  0
+cfg80211             1433600  3 rtw89_core,mac80211,rtw89_8852b_common
+snd_rn_pci_acp3x       16384  0
+amdtee                 32768  0
+snd_acp_config         20480  10 snd_rn_pci_acp3x,snd_sof_amd_acp70,snd_pci_acp6x,snd_pci_acp5x,snd_sof_amd_rembrandt,snd_sof_amd_vangogh,snd_sof_amd_acp63,snd_acp_pci,snd_pci_ps,snd_sof_amd_renoir
+amdxdna               139264  0
+snd                   143360  22 snd_hda_codec_generic,snd_seq,snd_seq_device,snd_hda_codec_hdmi,snd_hwdep,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek,snd_sof,snd_timer,snd_compress,snd_soc_core,snd_pcm,snd_rawmidi
+rc_core                73728  1 cec
+drm_ttm_helper         16384  2 amdgpu,nvidia_drm
+snd_soc_acpi           16384  3 snd_sof_amd_acp,snd_acp_config,snd_pci_ps
+i2c_piix4              32768  0
+i2c_algo_bit           16384  1 amdgpu
+libarc4                12288  1 mac80211
+ttm                   118784  2 amdgpu,drm_ttm_helper
+gpu_sched              61440  2 amdxdna,amdgpu
+snd_pci_acp3x          16384  0
+soundcore              16384  1 snd
+i2c_smbus              20480  1 i2c_piix4
+k10temp                16384  0
+ccp                   155648  2 kvm_amd,amdtee
+amd_sfh                61440  1 amd_pmf
+tee                    45056  2 amd_pmf,amdtee
+platform_profile       20480  2 amd_pmf,asus_wmi
+joydev                 32768  0
+input_leds             12288  0
+amd_pmc                49152  0
+serio_raw              20480  0
+mac_hid                12288  0
+sch_fq_codel           24576  2
+msr                    12288  0
+parport_pc             53248  0
+ppdev                  24576  0
+lp                     28672  0
+parport                73728  3 parport_pc,lp,ppdev
+efi_pstore             12288  0
+nfnetlink              20480  1
+dmi_sysfs              24576  0
+ip_tables              32768  0
+x_tables               65536  1 ip_tables
+autofs4                57344  2
+typec_displayport      20480  0
+nvme                   61440  2
+nvme_core             225280  3 nvme
+r8169                 126976  0
+video                  77824  5 nvidia_wmi_ec_backlight,asus_wmi,amdgpu,asus_nb_wmi,nvidia_modeset
+hid_multitouch         36864  0
+ucsi_acpi              12288  0
+hid_generic            12288  0
+thunderbolt           536576  0
+typec_ucsi             65536  1 ucsi_acpi
+realtek                49152  1
+nvme_auth              28672  1 nvme_core
+typec                 118784  2 typec_displayport,typec_ucsi
+i2c_hid_acpi           12288  0
+i2c_hid                40960  1 i2c_hid_acpi
+wmi                    28672  5 video,nvidia_wmi_ec_backlight,asus_wmi,wmi_bmof,mfd_aaeon
+hid                   262144  4 i2c_hid,hid_multitouch,hid_generic,amd_sfh
+
