@@ -1,6 +1,7 @@
-**/mod.sh
-**/.ko
-**/.o
-**/.mod
-**/.mod.c
-
+**/*mod.sh
+**/*.ko
+**/*.o
+**/*.mod
+**/*.mod.c
+**/*.cmd
+**/*.swp
