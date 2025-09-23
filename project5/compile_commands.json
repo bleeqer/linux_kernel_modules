@@ -1,0 +1,7 @@
+[
+  {
+    "directory": "/home/linux-king/kernel-modules",
+    "command": "clang -I/usr/src/linux-headers-6.8.0-83-generic/include -std=gnu89 -Wall -Wextra -c main.c -o main.o",
+    "file": "main.c"
+  }
+]
